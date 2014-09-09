@@ -1,0 +1,9 @@
+<h1>Product Listings</h1>
+<p><a href="#">HOME</a></p>
+<p><a href="#/productLocal/new">Add a Product</a></p>
+<article ng-repeat="product in products">
+    <h2>{{product.name}}</h2>
+    <img src="{{product.imageUrl}}" style="width:250px;" alt="">
+    <p>{{product.description.substring(0, 100)}} ... <a href="#/productLocal/{{$index}}">See Full Description</a></p>
+    <p><a href="#/productLocal/{{$index}}/edit">Edit Product Info</a> | <a href="" ng-click="removeProd($index)">Delete</a></p>
+</article>
