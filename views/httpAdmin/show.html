@@ -1,0 +1,16 @@
+<h1>Full Product Description</h1>
+<article>
+    <h2>{{singleProduct.name}}</h2>
+    <img src="{{singleProduct.imageUrl}}" alt="">
+    <p>${{singleProduct.price}}</p>
+    <p>{{singleProduct.description}}</p>
+    <div ng-show="singleProduct.reviews.length">
+      <section ng-repeat="review in singleProduct.reviews">
+        <h2>{{review.name}}</h2>
+        <p>{{review.date}}</p>
+        <p>{{review.content}}</p>
+      </section>
+
+    </div>
+    <a href="#/httpAdmin">Back</a>
+</article>

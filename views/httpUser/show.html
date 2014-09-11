@@ -1,0 +1,27 @@
+<h1>Full Product Description</h1>
+<article>
+
+    <h2>{{singleProduct.name}}</h2>
+    <img src="{{singleProduct.imageUrl}}" alt="">
+    <p>${{singleProduct.price}}</p>
+    <p>{{singleProduct.description}}</p>
+    <div ng-show="singleProduct.reviews.length">
+      <section ng-repeat="review in singleProduct.reviews">
+        <h2>{{review.name}}</h2>
+        <p>{{review.date | date: "medium"}}</p>
+        <p>{{review.content}}</p>
+      </section>
+
+    </div>
+    <a href="#/httpUser">Back</a>
+
+    <p><a href="" ng-click="addToCart(singleProduct)">ADD TO CART</a></p>
+    <p><a href="" ng-click="myRev=!myRev">ADD REVIEW</a></p>
+
+    <form action="" ng-show="myRev" ng-submit=addReview(review)>
+      <input type="text" placeholder="Name" ng-model="review.name">
+      <textarea name="" id="" cols="30" rows="10" ng-model="review.content" placeholder="Your review"></textarea>
+      <button ng-click="myRev=!myRev">SUBMIT</button>
+    </form>
+
+</article>

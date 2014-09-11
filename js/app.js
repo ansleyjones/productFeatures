@@ -1,6 +1,8 @@
 angular.module("mainProdModule",
   [
     "localProdSvc",
+    "httpAdmin",
+    "httpUser",
     "ngRoute",
     "ui.bootstrap"
   ])
@@ -10,9 +12,9 @@ angular.module("mainProdModule",
         templateUrl: "views/home.html",
         controller: "homeCtrl"
       })
-      .when("/productLocal", {
-          templateUrl: "views/localProducts/list.html",
-          controller: "localProdCtrl"
+      .when("/httpAdmin", {
+          templateUrl: "views/httpAdmin/list.html",
+          controller: "httpAdminCtrl"
       })
       .otherwise({
         redirectTo: "/"

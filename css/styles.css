@@ -1,3 +1,7 @@
+body{
+  font-family: 'Oswald', Helvetica;
+  font-weight: 300;
+}
 .container{
   width: 90%;
   margin: auto;
