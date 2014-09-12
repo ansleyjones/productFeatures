@@ -1,7 +1,7 @@
 <form action="" ng-submit="editProduct(singleProduct)">
-  <h2><input type="text" ng-model="singleProduct.name" value="{{product.name}}"></h2>
-  <h2><input type="text" ng-model="singleProduct.price" value="{{product.price}}"></h2>
-  <h2><input type="text" ng-model="singleProduct.imageUrl" value="{{product.imageUrl}}"></h2>
-  <p><textarea name="content" id="" cols="30" rows="10" ng-model="singleProduct.description">{{product.description}}</textarea></p>
+  <h2><input type="text" ng-model="singleProduct.name" placeholder="{{singleProduct.name}}"></h2>
+  <h2><input type="text" ng-model="singleProduct.price" placeholder="{{singleProduct.price}}"></h2>
+  <h2><input type="text" ng-model="singleProduct.imageUrl" placeholder="{{singleProduct.imageUrl}}"></h2>
+  <p><textarea name="content" id="" cols="30" rows="10" ng-model="singleProduct.description" placeholder="{{singleProduct.description}}">{{product.description}}</textarea></p>
   <button type="submit">UPDATE</button>
 </form>

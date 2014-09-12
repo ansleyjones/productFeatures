@@ -3,9 +3,8 @@
 <p><a href="#/httpUser/cart">GO TO CART</a></p>
 
 <article ng-repeat="product in products">
-
-    <h2>{{product.name}}</h2>
-    <img src="{{product.imageUrl}}" style="width:250px;" alt="">
+    <product-list image="{{product.imageUrl}}" name="{{product.name}}" description="{{product.description}}" _id="{{product._id}}">
+    </product-list>
     <p>{{product.description.substring(0, 100)}} ... <a href="#/httpUser/cart/{{product._id}}">[SEE MORE]</a></p>
     <p><a href="" ng-click="addToCart(product)">ADD TO CART</a></p>
 

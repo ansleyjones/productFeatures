@@ -1,5 +1,5 @@
 angular.module("httpUser")
-  .controller("httpUserCtrl", function($scope, $rootScope, $routeParams, $location, $log, httpUserSvc, httpAdminSvc){
+  .controller("httpUserCtrl", function($scope, $rootScope, $routeParams, $route, $location, $log, httpUserSvc, httpAdminSvc){
 
     $scope.cartTotal=0;
 
@@ -17,7 +17,6 @@ angular.module("httpUser")
 
     httpAdminSvc.getProduct($routeParams.idx).success(function(product){
       $scope.singleProduct = product;
-      console.log($scope.singleProduct);
     });
 
     $scope.addToCart = function(product){
@@ -45,7 +44,6 @@ angular.module("httpUser")
 
     $scope.removeFromCart = function(id){
       httpUserSvc.deleteFromCart(id);
-      console.log(id);
     };
 
     $scope.editCart = function(product){
@@ -55,12 +53,14 @@ angular.module("httpUser")
     $rootScope.$on("product:added", function(){
       httpUserSvc.getCart().success(function(cartProducts){
         $scope.cartProducts = cartProducts;
+        $route.reload();
       });
     });
 
     $rootScope.$on("cart:updated", function(){
       httpUserSvc.getCart().success(function(cartProducts){
         $scope.cartProducts = cartProducts;
+        $route.reload();
       });
     });
 
@@ -71,6 +71,7 @@ angular.module("httpUser")
         for (var i = 0; i < cartProducts.length; i++) {
           $scope.cartTotal += (cartProducts[i].price * cartProducts[i].quantity);
         };
+        $route.reload();
       });
     });
 

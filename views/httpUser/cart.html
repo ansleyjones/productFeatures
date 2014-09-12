@@ -1,20 +1,22 @@
 <h1>My Shopping Cart</h1>
 
 <article ng-repeat="cartProduct in cartProducts">
-  <h2>{{cartProduct.name}}</h2>
-  <img src="{{cartProduct.imageUrl}}" style="width:50px;" alt="">
-  <p>${{cartProduct.price}}</p>
-  <p>QUANTITY: {{cartProduct.quantity}}</p>
-  <button ng-click="quant=!quant">CHANGE QUANTITY</button>
-    <form ng-show="quant" ng-submit="editCart(cartProduct)">
-      <label>CHANGE QUANTITY: </label>
-      <input type="Number" ng-model="cartProduct.quantity" placeholder="cartProduct.quantity">
-      <button type="submit">SUBMIT</button>
-    </form>
+<user-cart quantity="{{cartProduct.quantity}}" title="{{cartProduct.name}}" image="{{cartProduct.imageUrl}}" price="{{cartProduct.price}}" description="{{cartProduct.description}}">
+</user-cart>
+<!-- <h2>{{cartProduct.name}}</h2>
+<img ng-src="{{cartProduct.imageUrl}}" style="width:50px;" alt="">
+<p>\\\${{cartProduct.price}}</p>
+<p>QUANTITY: {{cartProduct.quantity}}</p> -->
+<button ng-click="quant=!quant">CHANGE QUANTITY</button>
+  <form ng-show="quant" ng-submit="editCart(cartProduct)">
+    <label>CHANGE QUANTITY: </label>
+    <input type="Number" ng-model="cartProduct.quantity" placeholder="cartProduct.quantity">
+    <button type="submit">SUBMIT</button>
+  </form>
 
-  <p>
-    <a href="" ng-click="removeFromCart(cartProduct)">DELETE</a>
-  </p>
+<p>
+  <a href="" ng-click="removeFromCart(cartProduct)">DELETE</a>
+</p>
 
 </article>
 

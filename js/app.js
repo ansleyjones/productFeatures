@@ -4,6 +4,7 @@ angular.module("mainProdModule",
     "httpAdmin",
     "httpUser",
     "ngRoute",
+    "app.directives",
     "ui.bootstrap"
   ])
   .config(function($routeProvider){

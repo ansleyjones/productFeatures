@@ -3,6 +3,7 @@ body{
   font-weight: 300;
 }
 .container{
+  font-family: 'Oswald', Helvetica;
   width: 90%;
   margin: auto;
 }

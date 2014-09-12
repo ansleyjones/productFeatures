@@ -2,7 +2,7 @@
 <article>
 
     <h2>{{singleProduct.name}}</h2>
-    <img src="{{singleProduct.imageUrl}}" alt="">
+    <img ng-src="{{singleProduct.imageUrl}}" alt="">
     <p>${{singleProduct.price}}</p>
     <p>{{singleProduct.description}}</p>
     <div ng-show="singleProduct.reviews.length">
